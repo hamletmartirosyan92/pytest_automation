@@ -18,7 +18,7 @@ This will install Pytest and any other dependencies required for the code in thi
 To run the tests in this repository, simply navigate to the root directory of the repository and run the following command:
 
 ```
-pytest
+pytest -s
 ```
 
 This will run all the tests in the `tests` directory of the repository.
