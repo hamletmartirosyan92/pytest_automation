@@ -2,8 +2,7 @@ import os
 import re
 from pprint import pprint
 
-import PyPDF2
-import fitz
+import pypdf
 import pytest
 
 
@@ -50,7 +49,7 @@ def test_read_from_pdf(pdf_path):
     pattern_13 = r'inspection notes(\w*)'
 
     with open(pdf_path, 'rb') as pdf_file:
-        pdf_reader = PyPDF2.PdfReader(pdf_file)
+        pdf_reader = pypdf.PdfReader(pdf_file)
         page = pdf_reader.pages[0]
 
         width = int(page.artbox.width)
@@ -76,7 +75,3 @@ def test_read_from_pdf(pdf_path):
         assert re.match(pattern_11, extracted_text[11])
         assert re.match(pattern_12, extracted_text[12])
         assert re.match(pattern_13, extracted_text[13])
-
-    doc = fitz.open("example_1.pdf")
-
-    print(doc.load_page(0))
