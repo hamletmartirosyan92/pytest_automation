@@ -17,7 +17,7 @@ def detect_pdf_files(dir_name: str = '') -> [str]:
     base_dir = os.getcwd()
     pdf_files = list(filter(lambda x: ".pdf" in x, os.listdir(os.path.join(base_dir, dir_name))))
     if not pdf_files:
-        raise FileNotFoundError("PDF file does not exist in the current folder!")
+        raise FileNotFoundError("In the current folder does not exists any PDF file to test!")
 
     file_paths = []
     for file_name in pdf_files:
